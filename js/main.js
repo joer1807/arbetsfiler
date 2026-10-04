@@ -113,14 +113,14 @@ function createStudentCard() {
 history.unshift(studentCard); 
 // Spara och uppdatera historiken
 saveHistory();   /anrop till funktion
-renderHistory();   /tömmer historiken
+renderHistory();   /tömmer historiken  visar på skärmen 
 return studentCard;   //returnerar studentkort
 
 }
 
 
 /**
- * Sparar historiken i localStorage.
+ * nu kommer vi att spara historiken i localStorage.
  */
 function saveHistory() {
     // Spara history i localStorage
