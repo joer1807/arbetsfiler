@@ -26,17 +26,16 @@ const fullnameInput = document.querySelector("#fullname");
 
 // Array som används för felmeddelanden
 let errors = [];
-
 // Array som innehåller sparade studentkort
 let history = [];
 
 
-
 /**
  * Validerar formulärets inmatning.
- * @returns {boolean}
+ * @returns {boolean}    true om validering lyckas, annars false
  */
 function validateForm() {
+    errors = [];
     // Kontrollera formulärets obligatoriska fält (min kod)
     if (fullnameInput.value.trim() === "") {
         errors.push("Fyll i ditt fullständiga namn");
