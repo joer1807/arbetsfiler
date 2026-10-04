@@ -8,8 +8,28 @@
 const form = document.querySelector("#studentform");
 const clearButton = document.querySelector("#clear");
 
+
+const emailInput = document.querySelector("#email");
+const phoneInput = document.querySelector("#phone");
+const fontSelect = document.querySelector("#font");
+
+const previewFullname = document.querySelector("#previewfullname");
+const previewEmail = document.querySelector("#previewemail");
+const previewPhone = document.querySelector("#previewphone");
+
+const errorList = document.querySelector("#errorlist");
+const historySection = document.querySelector("#history");
+const deleteHistoryButton = document.querySelector("#delete");
+
 //hämtar värdet från formuläret
 const fullnameInput = document.querySelector("#fullname");
+
+// Array som används för felmeddelanden
+let errors = [];
+
+// Array som innehåller sparade studentkort
+let history = [];
+
 
 //validera värdet i fullnameInput
 if (fullnameInput.value === "") {
@@ -24,25 +44,6 @@ if (phoneInput.value === "") {
     errors.push("Fyll i ditt telefonnummer");
 }
 
-
-const emailInput = document.querySelector("#email");
-const phoneInput = document.querySelector("#phone");
-const fontSelect = document.querySelector("#font");
-
-const previewFullname = document.querySelector("#previewfullname");
-const previewEmail = document.querySelector("#previewemail");
-const previewPhone = document.querySelector("#previewphone");
-
-const errorList = document.querySelector("#errorlist");
-const historySection = document.querySelector("#history");
-const deleteHistoryButton = document.querySelector("#delete");
-
-
-// Array som används för felmeddelanden
-let errors = [];
-
-// Array som innehåller sparade studentkort
-let history = [];
 
 /**
  * Validerar formulärets inmatning.
