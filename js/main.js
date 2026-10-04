@@ -141,8 +141,14 @@ function renderHistory() {
     // Rensa tidigare visad historik
 historySection.innerHTML = "";
     // Skriv ut innehållet i history till DOM
-}
 
+history.forEach(function(card) {
+
+)) {
+
+
+
+}
 
 /**
  * Rensar formulär, aktuellt studentkort och felmeddelanden.
