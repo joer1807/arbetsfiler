@@ -74,19 +74,6 @@ function displayErrors() {
     });
 }
 
-// Händelselyssnare för när användaren klickar på submit
-form.addEventListener("submit", function (event) {
-    // Vi stoppar ALLTID omladdningen direkt så att sidan inte nollställs och tömmer vår JavaScript-historik
-    event.preventDefault();
-
-    // Kör valideringen
-    const isValid = validateForm();
-
-    if (isValid) {
-        // Den här rutan visas bara om ALLT är korrekt ifyllt
-        alert("Formuläret är korrekt! Här ska vi spara kortet sen.");
-    }
-});
 
 /**
  * Skapar ett studentkort.
@@ -120,9 +107,9 @@ function createStudentCard() {
 
 }
 
-/**
- *// nu kommer vi att spara historiken i localStorage.
- *
+
+ // nu kommer vi att spara historiken i localStorage.
+ 
 function saveHistory() {
     // Spara history i localStorage
     localStorage.setItem("studentHistory", JSON.stringify(history));
@@ -136,9 +123,9 @@ function loadHistory() {
 
 }
 
-/**
- * Visar historiken på sidan.
- */
+
+ // Visar historiken på sidan.
+ 
 function renderHistory() {
     // Rensa tidigare visad historik
     historySection.innerHTML = "";
@@ -151,13 +138,13 @@ function renderHistory() {
         cardDiv.style.fontFamily = card.font;
 
         //studentens info
-        cardDiv.innerHTML = 
+        cardDiv.innerHTML = `
         <div class="card-info">
             <p class="card-name">${card.name}</p>
             <p class="card-email">${card.email}</p>
             <p class="card-phone">${card.phone}</p>
         </div>
-;
+`;
         //koret i history på HTML
         historySection.appendChild(cardDiv);
 
@@ -177,7 +164,7 @@ function clearForm() {
  function deleteHistory() {
     
 localStorage.removeItem("studentHistory"); 
-history = ();
+history = [];
 renderHistory();
     // Radera sparad historik
 
