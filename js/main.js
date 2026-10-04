@@ -28,7 +28,7 @@ let errors = [];
 
 // Läser in historiken från localStorage
 let history = JSON.parse(localStorage.getItem("studentHistory")) || []; 
-// Om historiken inte finns
+// Om historiken inte finns så craschar inte sidan
 displayHistory();
 /**
  * Validera form inmatning.
@@ -54,12 +54,10 @@ function validateForm() {
         displayErrors();
         return false; 
     }
-
     // Om inga fel fanns, rensa listan på skärmen och godkänn valideringen
     errorList.innerHTML = "";
     return true;
 }
-
 /**
  * Visar felmeddelanden på sidan.
  */
@@ -88,9 +86,7 @@ form.addEventListener("submit", function(event) {
         alert("Formuläret är korrekt! Här ska vi spara kortet sen.");
     }
 });
-/**
- * Skapar ett studentkort och visar det på sidan.
- */
+
 /**
  * Skapar ett studentkort.
  * @returns {object} studentkort
