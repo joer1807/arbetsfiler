@@ -23,12 +23,12 @@ const deleteHistoryButton = document.querySelector("#delete");
 // Hämtar värdet från formuläret
 const fullnameInput = document.querySelector("#fullname");
 
-// Arrayer
+// Arrayer  för att lägga informationen 
 let errors = [];
 let history = [];
 
 /**
- * Validerar formulärets inmatning.
+ * Validera form inmatning.
  * @returns {boolean}    true om validering lyckas, annars false
  */
 function validateForm() {
