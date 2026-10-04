@@ -175,10 +175,10 @@ function renderHistory() {
  previewEmail.style.fontFamily = "";
  previewPhone.style.fontFamily = "";
 
- */
+ 
 function clearForm() {
     // Återställ formulär och studentkort
-errors [];
+errors = [];
  // Rensa eventuella felmeddelanden
 errorList.innerHTML = "";
    
