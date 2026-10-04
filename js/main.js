@@ -210,13 +210,13 @@ form.reset();   //tömmer formuläret
 });
 
 
-// När användaren klickar på "Rensa"
+// När användaren klickar på "Rensa" och radera historiken
 deleteHistoryButton.addEventListener("click", function() {
 if (confirm("Är du säker på att du vill radera historiken?")) {
 deleteHistory();
 
+// När sidan laddas läs in och visa eventuell tidigare historik
+loadHistory();
+renderHistory();
+}
 // När användaren klickar på "Radera historik"
-
-
-// När sidan laddas:
-// - läs in och visa eventuell tidigare historik
