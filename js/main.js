@@ -204,6 +204,10 @@ event.preventDefault();
 // - validera inmatningen
 const isValid = validateForm();
 // - skapa studentkort om valideringen lyckas
+if (isValid) {
+createStudentCard();
+form.reset();   //tömmer formuläret
+});
 
 
 // När användaren klickar på "Rensa"
