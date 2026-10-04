@@ -75,10 +75,10 @@ function displayErrors() {
 }
 
 
-/**
- * Skapar ett studentkort.
- * @returns {object} studentkort
- */
+
+ // Skapar ett studentkort.
+  //@returns {object} studentkort
+ 
 function createStudentCard() {
     // Hämta information från formuläret
     const studentCard = {
@@ -204,5 +204,3 @@ deleteHistory();
 // När sidan laddas läs in och visa eventuell tidigare historik
 loadHistory();
 renderHistory();
-
-// När användaren klickar på "Radera historik ovan.
