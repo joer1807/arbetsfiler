@@ -25,7 +25,7 @@ const fullnameInput = document.querySelector("#fullname");
 
 // Arrayer  för att lägga informationen 
 let errors = [];
-let history = [];
+let history = JSON.parse(localStorage.getItem("studentHistory"));
 
 /**
  * Validera form inmatning.
