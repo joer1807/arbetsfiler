@@ -4,10 +4,9 @@
  * Namn: DITT NAMN
  */
 
-// Hämta element från DOM
+// 1. Hämta element från DOM
 const form = document.querySelector("#studentform");
 const clearButton = document.querySelector("#clear");
-
 
 const emailInput = document.querySelector("#email");
 const phoneInput = document.querySelector("#phone");
@@ -21,22 +20,22 @@ const errorList = document.querySelector("#errorlist");
 const historySection = document.querySelector("#history");
 const deleteHistoryButton = document.querySelector("#delete");
 
-//hämtar värdet från formuläret
+// Hämtar värdet från formuläret
 const fullnameInput = document.querySelector("#fullname");
 
-// Array som används för felmeddelanden
+// Arrayer
 let errors = [];
-// Array som innehåller sparade studentkort
 let history = [];
-
 
 /**
  * Validerar formulärets inmatning.
  * @returns {boolean}    true om validering lyckas, annars false
  */
 function validateForm() {
-    errors = [];
-    // Kontrollera formulärets obligatoriska fält (min kod)
+    // Nollställ felen inför varje kontroll så gamla fel inte ligger kvar
+    errors = []; 
+
+    // Kontrollera formulärets obligatoriska fält och ta bort mellanslag (.trim)
     if (fullnameInput.value.trim() === "") {
         errors.push("Fyll i ditt fullständiga namn");
     }
@@ -47,34 +46,44 @@ function validateForm() {
         errors.push("Fyll i ditt telefonnummer");
     }
 
+    // Om det finns fel, visa dem och returnera false för att stoppa processen
+    if (errors.length > 0) {
+        displayErrors();
+        return false; 
+    }
+
+    // Om inga fel fanns, rensa listan på skärmen och godkänn valideringen
+    errorList.innerHTML = "";
+    return true;
+}
+
 /**
  * Visar felmeddelanden på sidan.
  */
-if (errors.length > 0) {
-    displayErrors();
-    return false;
-}
-errorList.innerHTML = "";
-return true;
-}
-
-
 function displayErrors() {
-    // Rensa tidigare felmeddelanden
-errorList.innerHTML = "";
-    // Skriv ut aktuella felmeddelanden till DOM
+    // Rensa tidigare felmeddelanden från skärmen
+    errorList.innerHTML = "";
+    
+    // Skriv ut aktuella felmeddelanden till DOM som punkter i listan
+    errors.forEach(function(errorMessage) {
+        const li = document.createElement("li");
+        li.textContent = errorMessage;
+        errorList.appendChild(li); // Lägger till i <ul id="errorlist">
+    });
 }
-    // Skriv ut aktuella felmeddelanden till DOM
-}
-//måste lägga till en lyssnare
-//när användaren klickar på submit
+
+// Händelselyssnare för när användaren klickar på submit
 form.addEventListener("submit", function(event) {
-  const isValid = validateForm();
-  if (isValid) {
-  event.preventDefault();    //sidan ska inte laddas om
-  } else {
-alert("Formuläret är inte korrekt. Vänligen försök igen.");
-  }
+    // Vi stoppar ALLTID omladdningen direkt så att sidan inte nollställs och tömmer vår JavaScript-historik
+    event.preventDefault(); 
+
+    // Kör valideringen
+    const isValid = validateForm();
+
+    if (isValid) {
+        // Den här rutan visas bara om ALLT är korrekt ifyllt
+        alert("Formuläret är korrekt! Här ska vi spara kortet sen.");
+    }
 });
 /**
  * Skapar ett studentkort och visar det på sidan.
