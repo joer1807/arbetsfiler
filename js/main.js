@@ -31,8 +31,6 @@ let errors = [];
 let history = [];
 
 
-    
-}
 //validera värdet i fullnameInput
 if (fullnameInput.value === "") {
     errors.push("Fyll i ditt fullständiga namn");
@@ -45,7 +43,6 @@ if (emailInput.value === "") {
 if (phoneInput.value === "") {
     errors.push("Fyll i ditt telefonnummer");
 }
-
 
 /**
  * Validerar formulärets inmatning.
@@ -84,8 +81,16 @@ function displayErrors() {
 
     // Skriv ut aktuella felmeddelanden till DOM
 }
-
-
+//måste lägga till en lyssnare
+//när användaren klickar på submit
+form.addEventListener("submit", function(event) {
+  const isValid = validateForm();
+  if (isValid) {
+  event.preventDefault();    //sidan ska inte laddas om
+  } else {
+alert("Formuläret är inte korrekt. Vänligen försök igen.");
+  }
+});
 /**
  * Skapar ett studentkort och visar det på sidan.
  */
