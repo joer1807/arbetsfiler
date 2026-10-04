@@ -118,7 +118,6 @@ return studentCard;   //returnerar studentkort
 
 }
 
-
 /**
  * nu kommer vi att spara historiken i localStorage.
  */
@@ -126,14 +125,16 @@ function saveHistory() {
     // Spara history i localStorage
     localStorage.setItem("studentHistory", JSON.stringify(history));
 }
-
-
 /**
  * Läser in tidigare historik från localStorage.
  */
-function loadHistory() {
-    // Hämta eventuell sparad historik
 
+
+// Hämta eventuell sparad historik
+function loadHistory() {
+    history = JSON.parse(localstorage.getItem("studentHistory"))|| [];
+    
+    
     // Uppdatera history
 }
 
