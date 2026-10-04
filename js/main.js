@@ -211,7 +211,9 @@ form.reset();   //tömmer formuläret
 
 
 // När användaren klickar på "Rensa"
-
+deleteHistoryButton.addEventListener("click", function() {
+if (confirm("Är du säker på att du vill radera historiken?")) {
+deleteHistory();
 
 // När användaren klickar på "Radera historik"
 
