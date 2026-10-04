@@ -79,13 +79,13 @@ if (errors.length > 0) {
 const li = document.createElement("li");
 li.textContent = errorMesage;
 errorList.appendChild(li);    //felet i HTML här. 
-    })
-
+    });
 
     // Returnera resultatet (true eller false) av valideringen
+    return false;
 }
-
-
+return true;
+}
 /**
  * Visar felmeddelanden på sidan.
  */
