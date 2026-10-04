@@ -27,7 +27,8 @@ const fullnameInput = document.querySelector("#fullname");
 let errors = [];
 
 // Läser in historiken från localStorage
-let history = JSON.parse(localStorage.getItem("studentHistory")) || []; 
+let history = [];
+//JSON.parse(localStorage.getItem("studentHistory")) || []; 
 // Om historiken inte finns så craschar inte sidan
 renderHistory();
 /**
