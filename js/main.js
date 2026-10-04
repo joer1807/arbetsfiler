@@ -121,7 +121,7 @@ function createStudentCard() {
 }
 
 /**
- * // nu kommer vi att spara historiken i localStorage.
+ *// nu kommer vi att spara historiken i localStorage.
  *
 function saveHistory() {
     // Spara history i localStorage
