@@ -8,7 +8,23 @@
 const form = document.querySelector("#studentform");
 const clearButton = document.querySelector("#clear");
 
+//hämtar värdet från formuläret
 const fullnameInput = document.querySelector("#fullname");
+
+//validera värdet i fullnameInput
+if (fullnameInput.value === "") {
+    errors.push("Fyll i ditt fullständiga namn");
+}
+//validera värdet i emailInput
+if (emailInput.value === "") {
+    errors.push("Fyll i din e-postadress");
+}
+//validera vrdet i phoneInput
+if (phoneInput.value === "") {
+    errors.push("Fyll i ditt telefonnummer");
+}
+
+
 const emailInput = document.querySelector("#email");
 const phoneInput = document.querySelector("#phone");
 const fontSelect = document.querySelector("#font");
