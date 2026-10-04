@@ -29,7 +29,7 @@ let errors = [];
 // Läser in historiken från localStorage
 let history = JSON.parse(localStorage.getItem("studentHistory")) || []; 
 // Om historiken inte finns så craschar inte sidan
-displayHistory();
+renderHistory();
 /**
  * Validera form inmatning.
  * @returns {boolean}    true om validering lyckas, annars false
@@ -219,4 +219,4 @@ deleteHistory();
 loadHistory();
 renderHistory();
 }
-// När användaren klickar på "Radera historik"
+// När användaren klickar på "Radera historik ovan.
