@@ -161,16 +161,24 @@ history.forEach(function(card) {
 )) {
 
 
-
-}
-
 /**
  * Rensar formulär, aktuellt studentkort och felmeddelanden.
+ function clearForm() {
+ form.reset();
+ previewFullname.textContent = "";
+ previewEmail.textContent = "";
+ previewPhone.textContent = "";
+ previewFullname.style.fontFamily = "";
+ previewEmail.style.fontFamily = "";
+ previewPhone.style.fontFamily = "";
+
  */
 function clearForm() {
     // Återställ formulär och studentkort
-
-    // Rensa eventuella felmeddelanden
+errors [];
+ // Rensa eventuella felmeddelanden
+errorList.innerHTML = "";
+   
 }
 
 
