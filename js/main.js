@@ -73,7 +73,14 @@ function validateForm() {
         errors.push("Fyll i ditt telefonnummer");
     }
 
-    // Visa eventuella felmeddelanden
+    // Visa eventuella felmeddelanden som ska synas på skärmen
+if (errors.length > 0) {
+    errors.forEach(function(errorMesage){
+const li = document.createElement("li");
+li.textContent = errorMesage;
+errorList.appendChild(li);    //felet i HTML här. 
+    })
+
 
     // Returnera resultatet (true eller false) av valideringen
 }
