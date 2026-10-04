@@ -166,36 +166,23 @@ function renderHistory() {
 
 //Rensar formulär, aktuellt studentkort och felmeddelanden.
  
- function clearForm() {
- form.reset();
- previewFullname.textContent = "";
- previewEmail.textContent = "";
- previewPhone.textContent = "";
- previewFullname.style.fontFamily = "";
- previewEmail.style.fontFamily = "";
- previewPhone.style.fontFamily = "";
-
- 
 function clearForm() {
+    form.reset();
     // Återställ formulär och studentkort
-errors = [];
- // Rensa eventuella felmeddelanden
-errorList.innerHTML = "";
    
 }
 
 
  //Raderar hela historiken.
- * function deleteHistory() {
-    }
-localStorage.removeItem("studentHistory");  // Radera sparad historik
-history = [];
+ function deleteHistory() {
+    
+localStorage.removeItem("studentHistory"); 
+history = ();
 renderHistory();
-
     // Radera sparad historik
 
     // Uppdatera history och visningen på sidan
-}
+} 
 
 
 // Eventlyssnare
