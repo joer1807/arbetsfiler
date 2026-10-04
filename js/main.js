@@ -93,6 +93,12 @@ form.addEventListener("submit", function(event) {
  */
 function createStudentCard() {
     // Hämta information från formuläret
+    const studentCard = {
+        name: fullnameInput.value.trim(),
+        email: emailInput.value.trim(),
+        phone: phoneInput.value.trim(),
+        font: fontSelect.value
+    };
 
     // Uppdatera studentkortet
 
