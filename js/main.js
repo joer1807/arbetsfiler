@@ -112,7 +112,7 @@ function createStudentCard() {
     // Lägg till studentkortet i historiken
 history.unshift(studentCard); 
 // Spara och uppdatera historiken
-save History();
+saveHistory();
 renderHistory(); 
 return studentCard;
 
