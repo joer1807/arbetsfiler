@@ -51,7 +51,7 @@ if (fullnameInput.value === "") {
 if (emailInput.value === "") {
     errors.push("Fyll i din e-postadress");
 }
-//validera vrdet i phoneInput
+//validera värdet i phoneInput
 if (phoneInput.value === "") {
     errors.push("Fyll i ditt telefonnummer");
 }
@@ -62,7 +62,16 @@ if (phoneInput.value === "") {
  * @returns {boolean}
  */
 function validateForm() {
-    // Kontrollera formulärets obligatoriska fält
+    // Kontrollera formulärets obligatoriska fält (min kod)
+    if (fullnameInput.value.trim() === "") {
+        errors.push("Fyll i ditt fullständiga namn");
+    }
+    if (emailInput.value.trim() === "") {
+        errors.push("Fyll i din e-postadress");
+    }
+    if (phoneInput.value.trim() === "") {
+        errors.push("Fyll i ditt telefonnummer");
+    }
 
     // Visa eventuella felmeddelanden
 
