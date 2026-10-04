@@ -188,6 +188,7 @@ errorList.innerHTML = "";
 localStorage.removeItem("studentHistory");  // Radera sparad historik
 history = [];
 renderHistory();
+
     // Radera sparad historik
 
     // Uppdatera history och visningen på sidan
@@ -197,7 +198,11 @@ renderHistory();
 // Eventlyssnare
 
 // När formuläret skickas:
+form.addEventListener("submit", function(event) {
+event.preventDefault();
+
 // - validera inmatningen
+const isValid = validateForm();
 // - skapa studentkort om valideringen lyckas
 
 
