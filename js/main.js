@@ -161,7 +161,7 @@ function renderHistory() {
         //koret i history på HTML
         historySection.appendChild(cardDiv);
 
-));
+    });
  {
 
 //Rensar formulär, aktuellt studentkort och felmeddelanden.
