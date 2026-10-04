@@ -110,10 +110,12 @@ function createStudentCard() {
     previewPhone.style.fontFamily = studentCard.font;
 
     // Lägg till studentkortet i historiken
-history.unshift(studentCard); . 
+history.unshift(studentCard); 
+// Spara och uppdatera historiken
+save History();
+renderHistory(); 
+return studentCard;
 
-
-    // Spara och uppdatera historiken
 }
 
 
