@@ -184,10 +184,10 @@ errorList.innerHTML = "";
    
 }
 
-/**
- * Raderar hela historiken.
+
+ //Raderar hela historiken.
  * function deleteHistory() {
- */
+    }
 localStorage.removeItem("studentHistory");  // Radera sparad historik
 history = [];
 renderHistory();
@@ -210,16 +210,25 @@ const isValid = validateForm();
 if (isValid) {
 createStudentCard();
 form.reset();   //tömmer formuläret
-});
+}
+    });
 
 
 // När användaren klickar på "Rensa" och radera historiken
+
+clearButton.addEventListener("click", function() {
+clearForm();
+});
+
 deleteHistoryButton.addEventListener("click", function() {
 if (confirm("Är du säker på att du vill radera fälten i historiken?")) {
 deleteHistory();
+    }
+    });
+    
 
 // När sidan laddas läs in och visa eventuell tidigare historik
 loadHistory();
 renderHistory();
-}
+
 // När användaren klickar på "Radera historik ovan.
