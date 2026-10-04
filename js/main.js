@@ -157,6 +157,7 @@ history.forEach(function(card) {
             <p class="card-email">${card.email}</p>
             <p class="card-phone">${card.phone}</p>
         </div>
+        
         //koret i history på HTML
         historySection.appendChild(cardDiv);
 
