@@ -140,9 +140,23 @@ function loadHistory() {
 function renderHistory() {
     // Rensa tidigare visad historik
 historySection.innerHTML = "";
-    // Skriv ut innehållet i history till DOM
 
+    // Skriv ut innehållet i history till DOM
 history.forEach(function(card) {
+    //ett nytt element till varje studentkort
+    const cardDiv = document.createElement("div");
+    cardDiv.classList.add("history-card");
+    cardDiv.style.fontFamily = card.font;
+
+    //studentens info
+    cardDiv.innerHTML = `
+        <div class="card-info">
+            <p class="card-name">${card.name}</p>
+            <p class="card-email">${card.email}</p>
+            <p class="card-phone">${card.phone}</p>
+        </div>
+        //koret i history på HTML
+        historySection.appendChild(cardDiv);
 
 )) {
 
