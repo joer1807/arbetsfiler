@@ -128,21 +128,18 @@ function saveHistory() {
 /**
  * Läser in tidigare historik från localStorage.
  */
-
-
 // Hämta eventuell sparad historik
 function loadHistory() {
     history = JSON.parse(localstorage.getItem("studentHistory"))|| [];
 
 }
 
-
 /**
  * Visar historiken på sidan.
  */
 function renderHistory() {
     // Rensa tidigare visad historik
-
+historySection.innerHTML = "";
     // Skriv ut innehållet i history till DOM
 }
 
