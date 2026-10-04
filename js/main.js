@@ -47,25 +47,23 @@ function validateForm() {
         errors.push("Fyll i ditt telefonnummer");
     }
 
-    // Visa eventuella felmeddelanden som ska synas på skärmen
-if (errors.length > 0) {
-    errors.forEach(function(errorMesage){
-const li = document.createElement("li");
-li.textContent = errorMesage;
-errorList.appendChild(li);    //felet i HTML här. 
-    });
-
-    // Returnera resultatet (true eller false) av valideringen
-    return false;
-}
-return true;
-}
 /**
  * Visar felmeddelanden på sidan.
  */
+if (errors.length > 0) {
+    displayErrors();
+    return false;
+}
+errorList.innerHTML = "";
+return true;
+}
+
+
 function displayErrors() {
     // Rensa tidigare felmeddelanden
-
+errorList.innerHTML = "";
+    // Skriv ut aktuella felmeddelanden till DOM
+}
     // Skriv ut aktuella felmeddelanden till DOM
 }
 //måste lägga till en lyssnare
@@ -80,6 +78,10 @@ alert("Formuläret är inte korrekt. Vänligen försök igen.");
 });
 /**
  * Skapar ett studentkort och visar det på sidan.
+ */
+/**
+ * Skapar ett studentkort.
+ * @returns {object} studentkort
  */
 function createStudentCard() {
     // Hämta information från formuläret
