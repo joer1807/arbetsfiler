@@ -30,7 +30,19 @@ let errors = [];
 // Array som innehåller sparade studentkort
 let history = [];
 
-
+function validateForm() {
+    // Kontrollera formulärets obligatoriska fält
+    if (fullnameInput.value === "") {
+        errors.push("Fyll i ditt fullständiga namn");
+    }
+    if (emailInput.value === "") {
+        errors.push("Fyll i din e-postadress");
+    }
+    if (phoneInput.value === "") {
+        errors.push("Fyll i ditt telefonnummer");
+    }
+    
+}
 //validera värdet i fullnameInput
 if (fullnameInput.value === "") {
     errors.push("Fyll i ditt fullständiga namn");
