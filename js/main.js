@@ -151,18 +151,18 @@ function renderHistory() {
         cardDiv.style.fontFamily = card.font;
 
         //studentens info
-        cardDiv.innerHTML = `
+        cardDiv.innerHTML = 
         <div class="card-info">
             <p class="card-name">${card.name}</p>
             <p class="card-email">${card.email}</p>
             <p class="card-phone">${card.phone}</p>
         </div>
-
+;
         //koret i history på HTML
         historySection.appendChild(cardDiv);
 
     });
- {
+}
 
 //Rensar formulär, aktuellt studentkort och felmeddelanden.
  
