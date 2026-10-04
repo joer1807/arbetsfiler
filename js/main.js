@@ -181,11 +181,13 @@ errorList.innerHTML = "";
    
 }
 
-
 /**
  * Raderar hela historiken.
+ * function deleteHistory() {
  */
-function deleteHistory() {
+localStorage.removeItem("studentHistory");  // Radera sparad historik
+history = [];
+renderHistory();
     // Radera sparad historik
 
     // Uppdatera history och visningen på sidan
