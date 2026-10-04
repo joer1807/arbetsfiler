@@ -101,6 +101,9 @@ function createStudentCard() {
     };
 
     // Uppdatera studentkortet
+    previewFullname.textContent = studentCard.name;
+    previewEmail.textContent = studentCard.email;
+    previewPhone.textContent = studentCard.phone;   
 
     // Lägg till studentkortet i historiken
 
