@@ -133,9 +133,7 @@ function saveHistory() {
 // Hämta eventuell sparad historik
 function loadHistory() {
     history = JSON.parse(localstorage.getItem("studentHistory"))|| [];
-    
-    
-    // Uppdatera history
+
 }
 
 
