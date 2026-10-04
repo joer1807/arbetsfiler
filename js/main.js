@@ -164,9 +164,8 @@ history.forEach(function(card) {
 ));
  {
 
-
-/**
- * Rensar formulär, aktuellt studentkort och felmeddelanden.
+//Rensar formulär, aktuellt studentkort och felmeddelanden.
+ 
  function clearForm() {
  form.reset();
  previewFullname.textContent = "";
@@ -216,7 +215,7 @@ form.reset();   //tömmer formuläret
 
 // När användaren klickar på "Rensa" och radera historiken
 deleteHistoryButton.addEventListener("click", function() {
-if (confirm("Är du säker på att du vill radera historiken?")) {
+if (confirm("Är du säker på att du vill radera fälten i historiken?")) {
 deleteHistory();
 
 // När sidan laddas läs in och visa eventuell tidigare historik
