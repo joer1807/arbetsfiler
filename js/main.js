@@ -37,7 +37,7 @@ renderHistory();
  */
 function validateForm() {
     // Nollställ felen inför varje kontroll så gamla fel inte ligger kvar
-    errors = []; 
+    errors = [];
 
     // Kontrollera formulärets obligatoriska fält och ta bort mellanslag (.trim)
     if (fullnameInput.value.trim() === "") {
@@ -53,7 +53,7 @@ function validateForm() {
     // Om det finns fel, visa dem och returnera false för att stoppa processen
     if (errors.length > 0) {
         displayErrors();
-        return false; 
+        return false;
     }
     // Om inga fel fanns, rensa listan på skärmen och godkänn valideringen
     errorList.innerHTML = "";
@@ -65,9 +65,9 @@ function validateForm() {
 function displayErrors() {
     // Rensa tidigare felmeddelanden från skärmen
     errorList.innerHTML = "";
-    
+
     // Skriv ut aktuella felmeddelanden till DOM som punkter i listan
-    errors.forEach(function(errorMessage) {
+    errors.forEach(function (errorMessage) {
         const li = document.createElement("li");
         li.textContent = errorMessage;
         errorList.appendChild(li); // Lägger till i <ul id="errorlist">
@@ -75,9 +75,9 @@ function displayErrors() {
 }
 
 // Händelselyssnare för när användaren klickar på submit
-form.addEventListener("submit", function(event) {
+form.addEventListener("submit", function (event) {
     // Vi stoppar ALLTID omladdningen direkt så att sidan inte nollställs och tömmer vår JavaScript-historik
-    event.preventDefault(); 
+    event.preventDefault();
 
     // Kör valideringen
     const isValid = validateForm();
@@ -104,19 +104,19 @@ function createStudentCard() {
     // Uppdatera studentkortet
     previewFullname.textContent = studentCard.name;
     previewEmail.textContent = studentCard.email;
-    previewPhone.textContent = studentCard.phone;   
+    previewPhone.textContent = studentCard.phone;
 
     previewFullname.style.fontFamily = studentCard.font;
     previewEmail.style.fontFamily = studentCard.font;
     previewPhone.style.fontFamily = studentCard.font;
 
     // Lägg till studentkortet i historiken
-history.unshift(studentCard); 
+    history.unshift(studentCard);
 
-// Spara och uppdatera historiken
-saveHistory();   /anrop till funktion
-renderHistory();   /tömmer historiken  visar på skärmen 
-return studentCard;   //returnerar studentkort
+    // Spara och uppdatera historiken
+    saveHistory();   /anrop till funktion
+    renderHistory();   /tömmer historiken  visar på skärmen
+    return studentCard;   //returnerar studentkort
 
 }
 
@@ -132,7 +132,7 @@ function saveHistory() {
  */
 // Hämta eventuell sparad historik
 function loadHistory() {
-    history = JSON.parse(localstorage.getItem("studentHistory"))|| [];
+    history = JSON.parse(localstorage.getItem("studentHistory")) || [];
 
 }
 
@@ -141,17 +141,17 @@ function loadHistory() {
  */
 function renderHistory() {
     // Rensa tidigare visad historik
-historySection.innerHTML = "";
+    historySection.innerHTML = "";
 
     // Skriv ut innehållet i history till DOM
-history.forEach(function(card) {
-    //ett nytt element till varje studentkort
-    const cardDiv = document.createElement("div");
-    cardDiv.classList.add("history-card");
-    cardDiv.style.fontFamily = card.font;
+    history.forEach(function (card) {
+        //ett nytt element till varje studentkort
+        const cardDiv = document.createElement("div");
+        cardDiv.classList.add("history-card");
+        cardDiv.style.fontFamily = card.font;
 
-    //studentens info
-    cardDiv.innerHTML = `
+        //studentens info
+        cardDiv.innerHTML = `
         <div class="card-info">
             <p class="card-name">${card.name}</p>
             <p class="card-email">${card.email}</p>
