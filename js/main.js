@@ -31,18 +31,6 @@ let errors = [];
 let history = [];
 
 
-//validera värdet i fullnameInput
-if (fullnameInput.value === "") {
-    errors.push("Fyll i ditt fullständiga namn");
-}
-//validera värdet i emailInput
-if (emailInput.value === "") {
-    errors.push("Fyll i din e-postadress");
-}
-//validera värdet i phoneInput
-if (phoneInput.value === "") {
-    errors.push("Fyll i ditt telefonnummer");
-}
 
 /**
  * Validerar formulärets inmatning.
