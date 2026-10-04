@@ -121,8 +121,8 @@ function createStudentCard() {
 }
 
 /**
- * nu kommer vi att spara historiken i localStorage.
- */
+ * // nu kommer vi att spara historiken i localStorage.
+ *
 function saveHistory() {
     // Spara history i localStorage
     localStorage.setItem("studentHistory", JSON.stringify(history));
@@ -132,7 +132,7 @@ function saveHistory() {
  */
 // Hämta eventuell sparad historik
 function loadHistory() {
-    history = JSON.parse(localstorage.getItem("studentHistory")) || [];
+    history = JSON.parse(localStorage.getItem("studentHistory")) || [];
 
 }
 
