@@ -158,9 +158,9 @@ function renderHistory() {
 function clearForm() {
     form.reset();
     // Återställ formulär och studentkort
-    prwFullname.textContent = "";
-    prwEmail.textContent = "";
-    prwPhone.textContent = "";
+    previewFullname.textContent = "";
+    previewEmail.textContent = "";
+    previewPhone.textContent = "";
 
 }
 
@@ -172,7 +172,6 @@ function deleteHistory() {
     renderHistory();
     clearform();
     // Radera sparad historik
-
     // Uppdatera history och visningen på sidan
 }
 
