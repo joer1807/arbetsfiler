@@ -170,6 +170,7 @@ function deleteHistory() {
     localStorage.removeItem("studentHistory");
     history = [];
     renderHistory();
+    clearform();
     // Radera sparad historik
 
     // Uppdatera history och visningen på sidan
