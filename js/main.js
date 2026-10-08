@@ -67,11 +67,12 @@ function displayErrors() {
     errorList.innerHTML = "";
 
     // Skriv ut aktuella felmeddelanden till DOM som punkter i listan
-    errors.forEach(function (errorMessage) {
-        const li = document.createElement("li");
-        li.textContent = errorMessage;
-        errorList.appendChild(li); // Lägger till i <ul id="errorlist">
-    });
+     //for each loop.
+    for (let i = 0; i < errors.length; i++) {
+        const error = document.createElement("li");
+        error.textContent = errors[i];
+        errorList.appendChild(error);
+    }
 }
 
 
