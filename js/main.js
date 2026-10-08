@@ -187,7 +187,7 @@ form.addEventListener("submit", function (event) {
     // - skapa studentkort om valideringen lyckas
     if (isValid) {
         createStudentCard();
-        clearForm();   //tömmer formuläret
+        form.reset();   //tömmer formuläret
     }
 });
 
