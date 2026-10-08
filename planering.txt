@@ -1,0 +1,17 @@
+planeringssteg:  
+hämta alla berörda element som behövs från DOM
+gör arrayer som är tomma + let. history = [] errors = []
+
+validera inmatninarna av formuläret
+inputvärden från formuläret 
+skapa en array för fel. 
+en array för historien
+om det finns fel return meddelande till användaren. 
+om inga fel skapas studenkoret
+
+
+studentkortet; studentcard()
+gör en function ()
+hämta elementen från DOM. 
+validera inmatinnan av formuläret
+ska läggas i historiken (unshift)

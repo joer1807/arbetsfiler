@@ -76,9 +76,9 @@ function displayErrors() {
 
 
 
- // Skapar ett studentkort.
-  //@returns {object} studentkort
- 
+// Skapar ett studentkort.
+//@returns {object} studentkort
+
 function createStudentCard() {
     // Hämta information från formuläret
     const studentCard = {
@@ -108,8 +108,8 @@ function createStudentCard() {
 }
 
 
- // nu kommer vi att spara historiken i localStorage.
- 
+// nu kommer vi att spara historiken i localStorage.
+
 function saveHistory() {
     // Spara history i localStorage
     localStorage.setItem("studentHistory", JSON.stringify(history));
@@ -124,8 +124,8 @@ function loadHistory() {
 }
 
 
- // Visar historiken på sidan.
- 
+// Visar historiken på sidan.
+
 function renderHistory() {
     // Rensa tidigare visad historik
     historySection.innerHTML = "";
@@ -145,61 +145,63 @@ function renderHistory() {
             <p class="card-phone">${card.phone}</p>
         </div>
 `;
-        //koret i history på HTML
+        //kortet i history på HTML
         historySection.appendChild(cardDiv);
 
     });
 }
 
 //Rensar formulär, aktuellt studentkort och felmeddelanden.
- 
+
 function clearForm() {
     form.reset();
     // Återställ formulär och studentkort
-   
+    prwFullname.textContent = "";
+    prwEmail.textContent = "";
+    prwPhone.textContent = "";
+
 }
 
+//Raderar hela historiken.
+function deleteHistory() {
 
- //Raderar hela historiken.
- function deleteHistory() {
-    
-localStorage.removeItem("studentHistory"); 
-history = [];
-renderHistory();
+    localStorage.removeItem("studentHistory");
+    history = [];
+    renderHistory();
     // Radera sparad historik
 
     // Uppdatera history och visningen på sidan
-} 
+}
 
 
 // Eventlyssnare
 
 // När formuläret skickas:
-form.addEventListener("submit", function(event) {
-event.preventDefault();
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-// - validera inmatningen
-const isValid = validateForm();
-// - skapa studentkort om valideringen lyckas
-if (isValid) {
-createStudentCard();
-form.reset();   //tömmer formuläret
-}
-    });
+    // - validera inmatningen
+    const isValid = validateForm();
+    // - skapa studentkort om valideringen lyckas
+    if (isValid) {
+        createStudentCard();
+        clearForm();   //tömmer formuläret
+    }
+});
 
 
 // När användaren klickar på "Rensa" och radera historiken
 
-clearButton.addEventListener("click", function() {
-clearForm();
+clearButton.addEventListener("click", function () {
+    clearForm();
 });
 
-deleteHistoryButton.addEventListener("click", function() {
-if (confirm("Är du säker på att du vill radera fälten i historiken?")) {
-deleteHistory();
+deleteHistoryButton.addEventListener("click", function () {
+    if (confirm("Är du säker på att du vill radera fälten i historiken?")) {
+        deleteHistory();
     }
-    });
-    
+});
+
 
 // När sidan laddas läs in och visa eventuell tidigare historik
 loadHistory();
