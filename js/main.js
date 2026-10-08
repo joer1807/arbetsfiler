@@ -132,7 +132,8 @@ function renderHistory() {
     historySection.innerHTML = "";
 
     // Skriv ut innehållet i history till DOM
-    history.forEach(function (card) {
+   for (let i = 0; i < history.length; i++) {
+    const card = history[i];
         //ett nytt element till varje studentkort
         const cardDiv = document.createElement("div");
         cardDiv.classList.add("history-card");
@@ -149,7 +150,7 @@ function renderHistory() {
         //kortet i history på HTML
         historySection.appendChild(cardDiv);
 
-    });
+    }
 }
 
 //Rensar formulär, aktuellt studentkort och felmeddelanden.
