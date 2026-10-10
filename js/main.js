@@ -1,7 +1,7 @@
 "use strict";
 /*
  * Laboration 5 - Studentkortsgenerator
- * Namn: DITT NAMN
+ * Namn: Johanna Lilja 
  */
 
 // 1. Hämta element från DOM
@@ -37,9 +37,10 @@ let history = [];
  */
 function validateForm() {
     // Nollställ felen inför varje kontroll så gamla fel inte ligger kvar
-    errors = [];
+    errors = [];  //den tomma listan 
 
     // Kontrollera formulärets obligatoriska fält och ta bort mellanslag (.trim)
+    // om den hittar ngt tomt fält så lägger i error list. 
     if (fullnameInput.value.trim() === "") {
         errors.push("Fyll i ditt fullständiga namn");
     }
