@@ -213,9 +213,9 @@ deleteHistoryButton.addEventListener("click", function () {
 });
 
 fontselect.addEventListener("change", function () {
-    previewFullname.style.fontFamily = fontselect.value;
-    previewEmail.style.fontFamily = fontselect.value;
-    previewPhone.style.fontFamily = fontselect.value;
+    previewFullname.style.fontFamily = fontSelect.value;
+    previewEmail.style.fontFamily = fontSelect.value;
+    previewPhone.style.fontFamily = fontSelect.value;
 
 
 if (history.length > 0) {
