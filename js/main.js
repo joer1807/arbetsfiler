@@ -212,6 +212,17 @@ deleteHistoryButton.addEventListener("click", function () {
     }
 });
 
+fontselect.addEventListener("change", function () {
+    previewFullname.style.fontFamily = fontselect.value;
+    previewEmail.style.fontFamily = fontselect.value;
+    previewPhone.style.fontFamily = fontselect.value;
+
+
+if (history.length > 0) {
+    history[0].font = fontSelect.value;
+    saveHistory();
+    renderHistory();
+});
 
 // När sidan laddas läs in och visa eventuell tidigare historik
 loadHistory();
