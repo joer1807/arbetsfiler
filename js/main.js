@@ -2,6 +2,13 @@
 /*
  * Laboration 5 - Studentkortsgenerator
  * Namn: Johanna Lilja 
+ * 
+ * /min planering;
+ * användaren klickar på knappen (event submit)
+ * kontroll att inte rutorna är tomma(value.trim.) 
+ * om allt lugnt spara infon i en lista(arrrayen)
+ * kom ihåg listan (local storage)
+ * rita ut listan på skärmen(JSON/ render/DOM)
  */
 
 // 1. Hämta element från DOM
