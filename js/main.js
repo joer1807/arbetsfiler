@@ -222,6 +222,7 @@ if (history.length > 0) {
     history[0].font = fontSelect.value;
     saveHistory();
     renderHistory();
+    }
 });
 
 // När sidan laddas läs in och visa eventuell tidigare historik
