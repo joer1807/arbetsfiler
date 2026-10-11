@@ -200,6 +200,7 @@ form.addEventListener("submit", function (event) {
 });
 
 
+
 // När användaren klickar på "Rensa" och radera historiken
 
 clearButton.addEventListener("click", function () {
