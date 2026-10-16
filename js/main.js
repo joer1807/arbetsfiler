@@ -34,10 +34,11 @@ const fullnameInput = document.querySelector("#fullname");
 let errors = [];
 
 // Läser in historiken från localStorage
-let history = [];
+let history = JSON.parse(localStorage.getItem("studentHistory")) || [];
 //JSON.parse(localStorage.getItem("studentHistory")) || []; 
 // Om historiken inte finns så craschar inte sidan
 
+renderHistory();
 /**
  * Validera form inmatning.
  * @returns {boolean}    true om validering lyckas, annars false
@@ -213,16 +214,15 @@ deleteHistoryButton.addEventListener("click", function () {
     }
 });
 
-fontselect.addEventListener("change", function () {
+fontSelect.addEventListener("change", function () {
     previewFullname.style.fontFamily = fontSelect.value;
     previewEmail.style.fontFamily = fontSelect.value;
     previewPhone.style.fontFamily = fontSelect.value;
 
-
-if (history.length > 0) {
-    history[0].font = fontSelect.value;
-    saveHistory();
-    renderHistory();
+    if (history.length > 0) {
+        history[0].font = fontSelect.value;
+        saveHistory();
+        renderHistory();
     }
 });
 
