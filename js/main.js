@@ -218,12 +218,6 @@ fontSelect.addEventListener("change", function () {
     previewFullname.style.fontFamily = fontSelect.value;
     previewEmail.style.fontFamily = fontSelect.value;
     previewPhone.style.fontFamily = fontSelect.value;
-
-    if (history.length > 0) {
-        history[0].font = fontSelect.value;
-        saveHistory();
-        renderHistory();
-    }
 });
 
 // När sidan laddas läs in och visa eventuell tidigare historik
